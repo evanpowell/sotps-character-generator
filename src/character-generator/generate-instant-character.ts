@@ -1,5 +1,4 @@
 import { Character } from "./character/character";
-import { logCharacter } from "./log-character";
 import { generateAttributes } from "./step1/generate-attributes";
 import { determineCharacteristics } from "./step2/determine-characteristics";
 import { discoverOrigins } from "./step3/discover-origins";
@@ -12,8 +11,6 @@ const generateInstantCharacter = (): Character => {
   determineCharacteristics(character);
   discoverOrigins(character);
   establishProfile(character);
-
-  logCharacter(character);
 
   return character;
 };

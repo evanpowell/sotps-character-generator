@@ -139,7 +139,7 @@ const addPointsToRandomAttribute = (character: Character, numPoints = 1) => {
 };
 
 enum TrainedValueType {
-  PROFICIENCY = "PROFICENCY",
+  PROFICIENCY = "PROFICIENCY",
   SKILL = "SKILL",
   RESISTANCE = "RESISTANCE",
   INSIGHT = "INSIGHT",
@@ -165,6 +165,9 @@ const getExistingTrainedValuesByType = (
     }
     case TrainedValueType.PROFICIENCY: {
       return character.proficiencies.map(({ name }) => name);
+    }
+    default: {
+      throw new Error(`Unrecognized Trained Value Type: ${type}`);
     }
   }
 };
