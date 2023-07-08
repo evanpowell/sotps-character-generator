@@ -1,0 +1,98 @@
+import { EnumValue } from "../utils/utility-types";
+import { AttributeEnum } from "./attributes";
+
+enum ProficiencyEnum {
+  COMPOUNDS = "Compounds",
+  ELIXIRS = "Elixirs",
+  HERBALISM = "Herbalism",
+  SALVES = "Salves",
+  TONICS = "Tonics",
+  FIELD_TACTICS = "Field Tactics",
+  FINESSE_MANEUVERS = "Finesse Maneuvers",
+  IMMOBILIZATION = "Immobilization",
+  POWER_STRIKES = "Power Strikes",
+  ACCURACY_STRIKES = "Accuracy Strikes",
+  CONSTRUCTION = "Construction",
+  FINE_CRAFTS = "Fine Crafts",
+  MECHANISMS = "Mechanisms",
+  SMITHING = "Smithing",
+  TRANSPORTS = "Transports",
+  CONNECTIONS = "Connections",
+  DIPLOMACY = "Diplomacy",
+  LEADERSHIP = "Leadership",
+  ORATION = "Oration",
+  WIT = "Wit",
+  FOCUSED_STUDY = "Focused Study",
+  INCANTATION = "Incantation",
+  KNOWLEDGE = "Knowledge",
+  RHETORIC = "Rhetoric",
+  RITUAL = "Ritual",
+  DISGUISES = "Disguises",
+  INTELLIGENCE = "Intelligence",
+  MISDIRECTION = "Misdirection",
+  SKULLDUGGERY = "Skullduggery",
+  STEALTH = "Stealth",
+  ARTIFICE = "Artifice",
+  CHARMS = "Charms",
+  EMERGENCE = "Emergence",
+  SPELLCASTING = "Spellcasting",
+  TRANSFERENCE = "Transference",
+  ANIMAL_HANDLING = "Animal Handling",
+  FOOD_HANDLING = "Food Handling",
+  OPERATIONS = "Operations",
+  PROVISIONING = "Provisioning",
+  SURVIVALISM = "Survivalism",
+}
+
+const proficiencyAttributeMap = {
+  [ProficiencyEnum.COMPOUNDS]: AttributeEnum.INT,
+  [ProficiencyEnum.ELIXIRS]: AttributeEnum.INT,
+  [ProficiencyEnum.HERBALISM]: AttributeEnum.PER,
+  [ProficiencyEnum.SALVES]: AttributeEnum.WIS,
+  [ProficiencyEnum.TONICS]: AttributeEnum.PER,
+  [ProficiencyEnum.FIELD_TACTICS]: AttributeEnum.WIS,
+  [ProficiencyEnum.FINESSE_MANEUVERS]: AttributeEnum.AGI,
+  [ProficiencyEnum.IMMOBILIZATION]: AttributeEnum.END,
+  [ProficiencyEnum.POWER_STRIKES]: AttributeEnum.STR,
+  [ProficiencyEnum.ACCURACY_STRIKES]: AttributeEnum.ACC,
+  [ProficiencyEnum.CONSTRUCTION]: AttributeEnum.PER,
+  [ProficiencyEnum.FINE_CRAFTS]: AttributeEnum.ACC,
+  [ProficiencyEnum.MECHANISMS]: AttributeEnum.INT,
+  [ProficiencyEnum.SMITHING]: AttributeEnum.ACC,
+  [ProficiencyEnum.TRANSPORTS]: AttributeEnum.END,
+  [ProficiencyEnum.CONNECTIONS]: AttributeEnum.INT,
+  [ProficiencyEnum.DIPLOMACY]: AttributeEnum.INT,
+  [ProficiencyEnum.LEADERSHIP]: AttributeEnum.WIS,
+  [ProficiencyEnum.ORATION]: AttributeEnum.CHA,
+  [ProficiencyEnum.WIT]: AttributeEnum.CHA,
+  [ProficiencyEnum.FOCUSED_STUDY]: AttributeEnum.WIS,
+  [ProficiencyEnum.INCANTATION]: AttributeEnum.CHA,
+  [ProficiencyEnum.KNOWLEDGE]: AttributeEnum.WIS,
+  [ProficiencyEnum.RHETORIC]: AttributeEnum.INT,
+  [ProficiencyEnum.RITUAL]: AttributeEnum.PER,
+  [ProficiencyEnum.DISGUISES]: AttributeEnum.PER,
+  [ProficiencyEnum.INTELLIGENCE]: AttributeEnum.INT,
+  [ProficiencyEnum.MISDIRECTION]: AttributeEnum.CHA,
+  [ProficiencyEnum.SKULLDUGGERY]: AttributeEnum.ACC,
+  [ProficiencyEnum.STEALTH]: AttributeEnum.AGI,
+  [ProficiencyEnum.ARTIFICE]: AttributeEnum.INT,
+  [ProficiencyEnum.CHARMS]: AttributeEnum.INT,
+  [ProficiencyEnum.EMERGENCE]: AttributeEnum.PER,
+  [ProficiencyEnum.SPELLCASTING]: AttributeEnum.ACC,
+  [ProficiencyEnum.TRANSFERENCE]: AttributeEnum.AGI,
+  [ProficiencyEnum.ANIMAL_HANDLING]: AttributeEnum.STR,
+  [ProficiencyEnum.FOOD_HANDLING]: AttributeEnum.PER,
+  [ProficiencyEnum.OPERATIONS]: AttributeEnum.INT,
+  [ProficiencyEnum.PROVISIONING]: AttributeEnum.PER,
+  [ProficiencyEnum.SURVIVALISM]: AttributeEnum.END,
+};
+
+type Proficiency = EnumValue<typeof ProficiencyEnum>;
+
+type ProficiencyAndPoints = {
+  name: Proficiency;
+  points: number;
+};
+
+export type { Proficiency, ProficiencyAndPoints };
+export { ProficiencyEnum, proficiencyAttributeMap };
