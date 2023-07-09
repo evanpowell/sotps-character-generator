@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/sotps-character-generator/static/css/main.023242e8.css",
+    "main.js": "/sotps-character-generator/static/js/main.2636fe2d.js",
+    "static/js/787.91bf187d.chunk.js": "/sotps-character-generator/static/js/787.91bf187d.chunk.js",
+    "static/media/character-sheet.pdf": "/sotps-character-generator/static/media/character-sheet.e0ccf8978abadc37e6dc.pdf",
+    "index.html": "/sotps-character-generator/index.html",
+    "main.023242e8.css.map": "/sotps-character-generator/static/css/main.023242e8.css.map",
+    "main.2636fe2d.js.map": "/sotps-character-generator/static/js/main.2636fe2d.js.map",
+    "787.91bf187d.chunk.js.map": "/sotps-character-generator/static/js/787.91bf187d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.023242e8.css",
+    "static/js/main.2636fe2d.js"
+  ]
+}
