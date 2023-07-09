@@ -2,15 +2,22 @@ import { Attribute, Attributes } from "../character/attributes";
 import { Character } from "../character/character";
 import { Resistances } from "../character/resistances";
 import { SkillAndPoints } from "../character/skills";
-import { sortAttributesDescending } from "../utils/attributes-utils";
 import { getRandomArrayValue, rollDie } from "../utils/dice-roller";
-import { deepClone, forNumTimes } from "../utils/general-utils";
+import { deepClone, forNumTimes, objectEntries } from "../utils/general-utils";
 import {
   TrainedValueType,
   addPointsToRandomTrainedValue,
 } from "../utils/character-utils";
 import { AptitudeObj } from "./aptitudes/aptitude-types";
 import { aptitudes } from "./aptitudes/aptitudes";
+
+const sortAttributesDescending = (
+  attributes: Attributes
+): { attribute: Attribute; value: number }[] => {
+  return objectEntries(attributes.adjustedScores)
+    .sort(([, valA], [, valB]) => (valA > valB ? -1 : 1))
+    .map(([attribute, num]) => ({ attribute, value: num }));
+};
 
 const getHighestAttributes = (attributes: Attributes): Attribute[] => {
   const attributesDescending = sortAttributesDescending(attributes);

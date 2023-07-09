@@ -8,6 +8,7 @@ const logCharacter = (character: Character) => {
       adjustedScores: character.attributes.adjustedScores,
       bonusPenalties: character.attributes.bonusPenalties,
     },
+    readiness: character.readiness,
   };
   console.log(JSON.stringify(characterObj, null, 2).replace(/["]/g, ""));
 };

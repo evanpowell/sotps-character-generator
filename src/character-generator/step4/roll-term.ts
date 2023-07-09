@@ -151,7 +151,7 @@ const diceResultVocationOutcomesMap: Record<
     numObstacles: 1,
     numAccolades: 3,
   },
-  [FourD6DiceResult.ALL_EQUAL_NUMBER]: {
+  [FourD6DiceResult.ALL_EQUAL_NUMBERS]: {
     numTrainingBonuses: 4,
     numObstacles: 0,
     numAccolades: 4,

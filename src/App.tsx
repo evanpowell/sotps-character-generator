@@ -6,9 +6,13 @@ import { logCharacter } from "./character-generator/log-character";
 
 function App() {
   const [character, setCharacter] = useState<Character>();
+  const [pdfUrl, setPdfUrl] = useState<string>();
 
-  function onClick() {
-    setCharacter(generateInstantCharacter());
+  async function onClick() {
+    const { pdfUrl: _pdfUrl, character: _character } =
+      await generateInstantCharacter();
+    setCharacter(_character);
+    setPdfUrl(_pdfUrl);
   }
 
   useEffect(() => {
@@ -24,15 +28,22 @@ function App() {
           <button className="generate-btn" onClick={onClick}>
             Generate Character
           </button>
-          {!!character && (
+          {!!character && !!pdfUrl && (
             <div className="result">
-              <h3>You are</h3>
               <h1>{character.name}</h1>
               <h4>the</h4>
               <h2>
                 {character.characteristics.ancestry}{" "}
                 {character.profile.vocation.name} of {character.origins.region}
               </h2>
+              {character.isDead && <h3>Died after encountering Pale Stone</h3>}
+              <a
+                className="download-link"
+                href={pdfUrl}
+                download={`${character.name}.pdf`}
+              >
+                <button>Download PDF</button>
+              </a>
             </div>
           )}
         </div>

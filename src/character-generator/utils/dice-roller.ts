@@ -48,7 +48,7 @@ enum FourD6DiceResult {
   ONE_EQUAL_PAIR,
   THREE_EQUAL_NUMBERS,
   TWO_EQUAL_PAIRS,
-  ALL_EQUAL_NUMBER,
+  ALL_EQUAL_NUMBERS,
 }
 
 const roll4D6DiceResults = (): { total: number; result: FourD6DiceResult } => {
@@ -65,7 +65,7 @@ const roll4D6DiceResults = (): { total: number; result: FourD6DiceResult } => {
 
   let result: FourD6DiceResult;
   if (occurences.includes(4)) {
-    result = FourD6DiceResult.ALL_EQUAL_NUMBER;
+    result = FourD6DiceResult.ALL_EQUAL_NUMBERS;
   } else if (occurences.includes(2) && !occurences.includes(1)) {
     result = FourD6DiceResult.TWO_EQUAL_PAIRS;
   } else if (occurences.includes(3)) {
