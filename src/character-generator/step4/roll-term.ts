@@ -99,7 +99,7 @@ const accolades: { accolade: string; applyBenefit: (c: Character) => void }[] =
     {
       accolade: "Honored by a traveler from the old kingdom",
       applyBenefit: (c) => {
-        addNote(c, `${rollDice(2, 6)} Scorthan Mitheers (accolade)`);
+        c.treasures.push(`${rollDice(2, 6)} Scorthan Mitheers (accolade)`);
       },
     },
     {

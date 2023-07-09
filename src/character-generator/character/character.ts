@@ -29,6 +29,7 @@ class Character {
     return calculateReadiness(this);
   }
   wealth = 0;
+  treasures: string[] = [];
   recognition = 0;
   mastery: string[] = [];
   notes: string[] = [];
