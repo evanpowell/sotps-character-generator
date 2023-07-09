@@ -2,6 +2,7 @@ import { Character } from "./character/character";
 import characterSheet from "../assets/character-sheet.pdf";
 import { PDFDocument } from "pdf-lib";
 import { AttributeEnum } from "./character/attributes";
+import { skillAttributeMap } from "./character/skills";
 
 const getFieldValueMap = (character: Character) => {
   return [
@@ -163,8 +164,38 @@ const getFieldValueMap = (character: Character) => {
     { fieldName: "Obstacles", value: character.profile.obstacles.join("\n") },
     { fieldName: "Accolades", value: character.profile.accolades.join("\n") },
     { fieldName: "Outcome", value: character.paleStoneEncounter.outcome },
+    ...mapSkillFields(character),
     // { fieldName: "", value: character. },
   ];
+};
+
+const mapSkillFields = (character: Character) => {
+  const skillFieldsMap: { fieldName: string; value: number | string }[] = [];
+  [
+    { value: "SV1", name: "SN1" },
+    { value: "SV2", name: "SN2" },
+    { value: "Sv3", name: "sn3" },
+    { value: "Sv4", name: "SN4" },
+    { value: "Sv5", name: "SN5" },
+    { value: "Sv6", name: "SN6" },
+    { value: "SV7", name: "SN7" },
+    { value: "SV8", name: "SN8" },
+  ].forEach(({ value, name }, i) => {
+    const matchingSkill = character.skills[i];
+    if (matchingSkill) {
+      skillFieldsMap.push({
+        fieldName: value,
+        value: matchingSkill.points,
+      });
+      skillFieldsMap.push({
+        fieldName: name,
+        value: `${matchingSkill.name} (${
+          skillAttributeMap[matchingSkill.name]
+        })`,
+      });
+    }
+  });
+  return skillFieldsMap;
 };
 
 const fillCharacterSheet = async (character: Character) => {
@@ -172,8 +203,8 @@ const fillCharacterSheet = async (character: Character) => {
   const pdfDoc = await PDFDocument.load(data);
   const form = pdfDoc.getForm();
 
-  // const fields = form.getFields().map((field) => field.getName());
-  // console.log(fields);
+  const fields = form.getFields().map((field) => field.getName());
+  console.log(fields);
   // return "";
 
   const fieldsWithValues = getFieldValueMap(character);
