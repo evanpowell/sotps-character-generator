@@ -1,4 +1,4 @@
-import { Language, LanguageEnum } from "../language";
+import { LanguageEnum } from "../language";
 import { alldedanNames } from "./alldedan-names";
 import { ardonicNames } from "./ardonic-names";
 import { broleanNames } from "./brolean-names";

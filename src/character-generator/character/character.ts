@@ -1,4 +1,4 @@
-import { AttributeEnum, Attributes } from "./attributes";
+import { Attributes } from "./attributes";
 import { Characteristics } from "./characteristics";
 import type { SkillAndPoints } from "./skills";
 import { Resistances } from "./resistances";
