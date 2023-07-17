@@ -54,6 +54,7 @@ function determineCharacteristics(character: Character) {
     weight: rollWeight(ancestry),
     age: rollAge(ancestry),
     style: rollStyle(),
+    distinguishingFeatures: [],
   };
 }
 

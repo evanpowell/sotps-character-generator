@@ -23,6 +23,7 @@ class Origins {
   suggestedMotivation: string = "";
   suggestedExpertise: Expertise | "" = "";
   reputation: string = "";
+  backgroundStory: string = "";
 }
 
 export { Origins };

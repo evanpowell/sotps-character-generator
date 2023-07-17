@@ -20,7 +20,7 @@ class Characteristics {
   weight: number = 0;
   age: number = 0;
   style: string = "";
-  // distinguishingFeatures: string[];
+  distinguishingFeatures: string[] = [];
 }
 
 export { AncestryEnum, Characteristics };

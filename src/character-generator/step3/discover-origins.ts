@@ -7,6 +7,7 @@ import { rollSettlement } from "./settlement";
 import { rollReputation } from "./reputation";
 import { rollName } from "./name";
 import { Character } from "../character/character";
+import { discoverBackgroundStory } from "./background-story/background-story";
 
 const discoverOrigins = (character: Character) => {
   rollBirthDate(character);
@@ -17,6 +18,7 @@ const discoverOrigins = (character: Character) => {
   rollParentageRelationsConnections(character);
   rollReputation(character);
   rollName(character);
+  discoverBackgroundStory(character);
 };
 
 export { discoverOrigins };
