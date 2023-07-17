@@ -14,3 +14,5 @@ const logCharacter = (character: Character) => {
 };
 
 export { logCharacter };
+
+// Test comment 
